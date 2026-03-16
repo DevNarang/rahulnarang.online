@@ -45,7 +45,7 @@
             left: 0; 
             width: 100vw; 
             height: 100vh;
-            background-image: url('background.jpg'); /* Your image file */
+            background-image: url('background-image.jpg'); /* Your image file */
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -207,8 +207,8 @@
         }
 
         .luma-btn:focus, .luma-btn:hover {
-            background-color: var(--ocean); 
-            color: var(--shell);
+            background-color: var(--oyster); /* Changed to #FFFAF2 */
+            color: var(--seaweed); /* Changed from --shell to --seaweed for contrast */
             transform: translateY(-2px);
             outline: 3px solid var(--algae);
             outline-offset: 2px;
@@ -238,7 +238,8 @@
         }
 
         .header-btn:hover, .header-btn:focus {
-            background-color: var(--algae);
+            background-color: var(--oyster); /* Changed to #FFFAF2 */
+            color: var(--seaweed); /* Ensures text is readable */
             transform: translateY(-2px);
             outline: 3px solid var(--ocean);
             outline-offset: 2px;
