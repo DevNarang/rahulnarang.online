@@ -30,12 +30,12 @@
             color: var(--seaweed);
             margin: 0;
             padding: 0;
-            padding-top: 140px; /* Increased slightly for the new card layout */
+            padding-top: 140px; 
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            background-color: var(--seaweed); /* Fallback color before image loads */
+            background-color: var(--seaweed);
         }
 
         /* Fading Background Image Layer */
@@ -45,7 +45,7 @@
             left: 0; 
             width: 100vw; 
             height: 100vh;
-            background-image: url('background-image.jpg'); /* Your image file */
+            background-image: url('./background-image.jpg'); 
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -72,7 +72,6 @@
             left: 0;
             width: 100%;
             height: 100px;
-            /* Using Oyster with transparency + blur for the glass effect */
             background-color: rgba(255, 250, 242, 0.85); 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -88,7 +87,7 @@
 
         header.shrunk {
             height: 75px;
-            background-color: rgba(255, 250, 242, 0.95); /* Gets slightly more solid when shrunk */
+            background-color: rgba(255, 250, 242, 0.95);
         }
 
         /* Main Content - Converted to a Glass Card */
@@ -113,7 +112,7 @@
 
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s; /* 0.5s delay so background loads first */
+            transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
         }
 
         main.visible {
@@ -181,7 +180,6 @@
             transform: translateY(0);
         }
 
-        /* The new small text above the button */
         .cta-subtext {
             font-size: 0.875rem;
             color: var(--seaweed);
@@ -190,28 +188,6 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
             opacity: 0.8;
-        }
-
-        .luma-btn {
-            display: inline-block;
-            background-color: var(--seaweed);
-            color: var(--shell);
-            text-decoration: none;
-            padding: 16px 32px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            width: 100%; /* Makes button fill the footer card */
-            box-sizing: border-box;
-        }
-
-        .luma-btn:focus, .luma-btn:hover {
-            background-color: var(--oyster); /* Changed to #FFFAF2 */
-            color: var(--seaweed); /* Changed from --shell to --seaweed for contrast */
-            transform: translateY(-2px);
-            outline: 3px solid var(--algae);
-            outline-offset: 2px;
         }
 
         .brand-logo {
@@ -225,6 +201,21 @@
             height: 28px; 
         }
 
+        /* --- BUTTON BASE STYLES --- */
+        .luma-btn {
+            display: inline-block;
+            background-color: var(--seaweed);
+            color: var(--shell);
+            text-decoration: none;
+            padding: 16px 32px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease, outline 0.1s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
         .header-btn {
             background-color: var(--kelp); 
             color: var(--seaweed); 
@@ -233,13 +224,15 @@
             font-size: 1.125rem; 
             font-weight: 600;
             border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease, outline 0.1s ease;
             display: inline-block; 
         }
 
-        .header-btn:hover, .header-btn:focus {
-            background-color: var(--oyster); /* Changed to #FFFAF2 */
-            color: var(--seaweed); /* Ensures text is readable */
+        /* --- UNIFIED BUTTON HOVER/FOCUS STYLES --- */
+        .luma-btn:focus, .luma-btn:hover,
+        .header-btn:focus, .header-btn:hover {
+            background-color: var(--oyster); 
+            color: var(--seaweed); 
             transform: translateY(-2px);
             outline: 3px solid var(--ocean);
             outline-offset: 2px;
