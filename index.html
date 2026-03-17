@@ -100,6 +100,7 @@
             padding: 50px 30px;
             max-width: 800px;
             width: 90%;
+            box-sizing: border-box; /* Added to prevent overflow */
             margin: 0 auto 40px;
             
             /* Glassmorphism card styling */
@@ -168,6 +169,7 @@
             padding: 30px;
             max-width: 400px;
             width: 90%;
+            box-sizing: border-box; /* Added to prevent overflow */
             margin: 0 auto 60px;
             
             opacity: 0;
@@ -226,6 +228,7 @@
             border-radius: 4px;
             transition: background-color 0.3s ease, transform 0.2s ease, outline 0.1s ease;
             display: inline-block; 
+            white-space: nowrap; /* Prevents text from wrapping awkwardly */
         }
 
         /* --- UNIFIED BUTTON HOVER/FOCUS STYLES --- */
@@ -238,11 +241,61 @@
             outline-offset: 2px;
         }
 
+        /* --- MOBILE OPTIMIZATIONS --- */
         @media (max-width: 600px) {
-            header { padding: 0 20px; }
-            .event-title { font-size: 2rem; }
-            .event-description { font-size: 1rem; }
-            main, footer { padding: 30px 20px; }
+            body { 
+                padding-top: 110px; /* Reduced so content isn't pushed down too far */
+            }
+            
+            header { 
+                padding: 0 15px; /* Tighter side padding */
+                height: 80px; /* Slightly shorter initial header */
+            }
+            
+            header.shrunk { 
+                height: 60px; 
+            }
+            
+            .brand-logo { 
+                height: 30px; /* Scale logo down natively on mobile */
+            }
+            
+            header.shrunk .brand-logo {
+                height: 22px;
+            }
+
+            .header-btn {
+                padding: 10px 16px; /* Shrink button size */
+                font-size: 0.9rem; /* Shrink button text */
+            }
+
+            .event-title { 
+                font-size: 1.75rem; /* Better scale for mobile reading */
+            }
+            
+            .event-description { 
+                font-size: 1rem; 
+                margin-bottom: 24px;
+            }
+            
+            main, footer { 
+                padding: 30px 20px; 
+                width: 92%; /* Gives a slightly wider usable area on narrow screens */
+            }
+        }
+
+        /* Extra small devices (like iPhone SE) */
+        @media (max-width: 380px) {
+            .header-btn {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+            .brand-logo { 
+                height: 24px;
+            }
+            .event-title {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
