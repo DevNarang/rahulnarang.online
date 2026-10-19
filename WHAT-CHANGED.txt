@@ -1,0 +1,16 @@
+rahulnarang.online upload, prepared 2026-10-17 from D:\Poems\website
+
+Upload these two files to the site's top folder, side by side:
+  index.html                 the main page (it is D:\Poems\website\site.preview.html, renamed)
+  book-random-thoughts.html  new page: Random Thoughts, all 46 poems
+
+Changes since the last upload (from D:\Poems\CHANGELOG.md):
+  2026-10-06  Added the Random Thoughts collection (46 poems) with its own page
+              and a card under Poems on the main page.
+
+Pages are self-contained: no images, audio or stylesheet files to upload
+(fonts load from Google Fonts).
+
+Links on the main page to pages NOT in this upload (keep the live copies on the server):
+  book-dil-ka-radio.html     Dil Ka Radio at 1.30 PM
+  book-burden-to-bliss.html  From Burden to Bliss
